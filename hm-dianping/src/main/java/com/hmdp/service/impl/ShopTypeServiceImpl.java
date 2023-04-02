@@ -41,7 +41,7 @@ public class ShopTypeServiceImpl extends ServiceImpl<ShopTypeMapper, ShopType> i
         if (shopTypes==null) {
             return Result.fail("该分类不存在");
         }
-        //5.数据存在，送入REDIS
+        //5.数据存在，送入redis
         stringRedisTemplate.opsForValue().set("cache:ShopType",JSONUtil.toJsonStr(shopTypes));
 
         return Result.ok(shopTypes);

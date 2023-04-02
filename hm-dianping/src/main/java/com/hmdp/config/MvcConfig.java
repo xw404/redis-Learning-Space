@@ -35,6 +35,7 @@ public class MvcConfig implements WebMvcConfigurer {
         ).order(1);
         //刷新拦截器
         registry.addInterceptor(new RefreshTokenTnterceptor(stringRedisTemplate))
-                .addPathPatterns("/**").order(0);
+                .addPathPatterns("/**")
+                .order(0);
     }
 }
